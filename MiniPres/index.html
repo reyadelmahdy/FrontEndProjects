@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniPres</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="page" id="page-1">
+        <h1>Welcome to MiniPres</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut doloremque commodi dicta quod sapiente dolorem amet asperiores culpa molestias corrupti. Labore ducimus a itaque harum molestiae, est, nulla animi laboriosam numquam libero, aliquid architecto doloribus rem placeat distinctio dignissimos qui?</p>
+        <div>
+            <a href="#page-2" class="btn">
+                Next Page <i class="fas fa-arrow-circle-down"></i>
+            </a>
+        </div>
+    </section>
+    <section class="page" id="page-2">
+        <h1>Welcome to MiniPres</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut doloremque commodi dicta quod sapiente dolorem amet asperiores culpa molestias corrupti. Labore ducimus a itaque harum molestiae, est, nulla animi laboriosam numquam libero, aliquid architecto doloribus rem placeat distinctio dignissimos qui?</p>
+        <div>
+            <a href="#page-1" class="btn btn-dark">
+                Prev Page <i class="fas fa-arrow-circle-up"></i>
+            </a>
+            <a href="#page-3" class="btn">
+                Next Page <i class="fas fa-arrow-circle-down"></i>
+            </a>
+        </div>
+    </section>
+    <section class="page" id="page-3">
+        <h1>Welcome to MiniPres</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut doloremque commodi dicta quod sapiente dolorem amet asperiores culpa molestias corrupti. Labore ducimus a itaque harum molestiae, est, nulla animi laboriosam numquam libero, aliquid architecto doloribus rem placeat distinctio dignissimos qui?</p>
+        <div>
+            <a href="#page-2" class="btn btn-dark">
+                Prev Page <i class="fas fa-arrow-circle-up"></i>
+            </a>
+            <a href="#page-4" class="btn">
+                Next Page <i class="fas fa-arrow-circle-down"></i>
+            </a>
+        </div>
+    </section>
+    <section class="page" id="page-4">
+        <h1>Welcome to MiniPres</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut doloremque commodi dicta quod sapiente dolorem amet asperiores culpa molestias corrupti. Labore ducimus a itaque harum molestiae, est, nulla animi laboriosam numquam libero, aliquid architecto doloribus rem placeat distinctio dignissimos qui?</p>
+        <div>
+            <a href="#page-3" class="btn btn-dark">
+                Prev Page <i class="fas fa-arrow-circle-up"></i>
+            </a>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    // Smooth Scrolling
+    <script>
+    $('#navbar a, .btn').on('click', function (e) {
+        if (this.hash !== '') {
+            e.preventDefault();
+            const hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top,
+        }, 600);
+        }
+    });
+    </script>
+</body>
+</html>
