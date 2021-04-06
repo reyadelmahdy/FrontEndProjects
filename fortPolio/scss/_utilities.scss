@@ -1,0 +1,149 @@
+$primaryColor: #ffbc00;
+$secondaryColor: lighten($primaryColor, 30%);
+$logo-ff: "Brandon Smith Stamp", sans-serif;
+$fontFam: "Dosis", sans-serif;
+$siteWidth: 1280px;
+$light: #f4f4f4;
+$dark: #333;
+$neutral: #ccc;
+$bg-img: url("../img/showcase.jpg");
+@function set-text-color($color) {
+  @if lightness($color) > 50 {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+@mixin general {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: $fontFam;
+    line-height: 1.6;
+    background: white;
+    color: black;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  h2,
+  h3,
+  h4 {
+    text-transform: uppercase;
+  }
+  img {
+    width: 100%;
+  }
+  .container {
+    max-width: $siteWidth;
+    padding: 0 1.5rem;
+    margin: auto;
+    overflow: hidden;
+  }
+  %btn-shared {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    transition: all 0.5s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn {
+    &-main {
+      @extend %btn-shared;
+      color: $dark;
+      background: $primaryColor;
+    }
+    &-light {
+      @extend %btn-shared;
+      color: $dark;
+      background: $light;
+    }
+    &-dark {
+      @extend %btn-shared;
+      color: $light;
+      background: $dark;
+    }
+  }
+  button[class^="btn-"]:hover,
+  a[class^="btn-"]:hover {
+    background: $primaryColor;
+  }
+
+  // Backgrounds
+  .bg {
+    &-primary {
+      background: $primaryColor;
+      color: set-text-color($primaryColor);
+    }
+    &-dark {
+      background: $dark;
+      color: set-text-color($dark);
+    }
+    &-light {
+      background: $light;
+      color: set-text-color($light);
+    }
+    &-neutral {
+      background: $neutral;
+      color: set-text-color($neutral);
+    }
+  }
+  .lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .text-center {
+    text-align: center;
+  }
+  // Padding
+  .py {
+    &-1 {
+      padding: 1rem 0;
+    }
+    &-2 {
+      padding: 2rem 0;
+    }
+    &-3 {
+      padding: 3rem 0;
+    }
+    &-4 {
+      padding: 4rem 0;
+    }
+  }
+  .my {
+    &-1 {
+      margin: 1rem 0;
+    }
+    &-2 {
+      margin: 2rem 0;
+    }
+    &-3 {
+      margin: 3rem 0;
+    }
+    &-4 {
+      margin: 4rem 0;
+    }
+  }
+  .section-title {
+    font-size: 2rem;
+    display: block;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 100;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .bottom-line {
+    height: 2px;
+    width: 3rem;
+    background: $primaryColor;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+}
